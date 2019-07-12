@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> <%= @restaurant.name %> </title>
+</head>
+<body>
+	<h1>
+		<%= @restaurant.name %>
+	</h1>
+	<ul>
+		<li> <%= @restaurant.address %> </li>
+		<li> Our Pizza: 
+			<ul>
+				<% @restaurant.pizzas.each do |pizza| %> 
+					<li> <%= link_to pizza.name, pizza_path(pizza)%> </li>
+				<% end %>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

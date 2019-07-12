@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Create a new pizza</title>
+</head>
+<body>
+<% if flash[:errors] %>
+	<ul>
+		<% flash[:errors].each do |error| %>
+		  <li> <%= error %> </li>
+		<% end %>
+	</ul>
+<% end %>
+
+<h1> Create your pizza: </h1>
+<%= form_for @pizza do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.label :ingredients %>
+	<%= f.text_field :ingredients %>
+	<%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
+	<%= f.submit "Add this pizza" %>
+<% end %>
+</body>
+</html>

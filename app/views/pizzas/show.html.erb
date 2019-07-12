@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> <%= @pizza.name %></title>
+</head>
+<body>
+<h1> <%= @pizza.name %> pizza: </h1>
+	<ul>
+		<li> Ingredients: <%= @pizza.ingredients %> </li> 
+		<li> Brought to you by: <%= link_to @pizza.restaurant.name, restaurant_path(@pizza.restaurant) %> </li> 
+	</ul>
+</body>
+</html>
