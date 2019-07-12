@@ -1,0 +1,11 @@
+<h1> <%= @restaurant.name %> </h1>
+
+
+<%= @restaurant.address %><br><br>
+
+<% if @pizzas.any? %>
+  <h2>Pizzas</h2>
+  <% @pizzas.each do |p| %>
+    <%= link_to p.name, p %><br>
+  <% end %>
+<% end %>
