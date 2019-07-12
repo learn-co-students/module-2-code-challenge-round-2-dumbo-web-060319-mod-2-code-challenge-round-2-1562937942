@@ -1,0 +1,13 @@
+<h1 style='margin-top:100px;font-size:2rem'>I love this place!</h1>
+<hr>
+<h3><%= @restaurant.name %></h3>
+<h4><%= @restaurant.address %></h3>
+<hr>
+<h2>Checkout their pies</h2>
+  <ul>
+    <li> 
+      <% @restaurant.pizzas.each do |pizza| %>
+        <li>
+          <%= pizza.name %>
+        </li>
+      <% end %>

@@ -1,0 +1,22 @@
+<h1 style='margin-top:100px;font-size:2rem'>Put that pie in the oven!</h1>
+<hr>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |err| %>
+    <li>
+      <%= err %>
+    </li>
+  <%end%>
+<%end%> 
+
+<%= form_for @pizza do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :ingredients %>
+  <%= f.text_field :ingredients %>
+
+  <%= f.collection_select :restaurant_id, @restaurants, :id, :name %>
+  <%= f.submit "Not too hot!" %>
+
+<% end %>
