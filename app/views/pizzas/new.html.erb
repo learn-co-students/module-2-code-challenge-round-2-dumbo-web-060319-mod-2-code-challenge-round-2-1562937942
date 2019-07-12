@@ -1,0 +1,8 @@
+<h3>Create a Pizza</h3>
+<%= form_with model: @pizza do |form| %>
+  <%= form.text_field :name, placeholder: "name" %>
+  <%= form.text_field :ingredients, placeholder: "ingredients" %>
+  <%= form.collection_select :pizza_id, Restaurant.all, :id, :name%>
+
+  <%= form.submit %>
+<% end %>
