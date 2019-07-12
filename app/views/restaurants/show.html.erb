@@ -1,0 +1,12 @@
+<h3> Welcome to <%= @restaurant.name %> </h3>
+
+<%= @restaurant.address %> <br> <br>
+
+<h3> These are the pizza(s) we sell. </h3> <br>
+<ul>
+<% @restaurant.pizzas.each do |pizza| %>
+
+    <li> <%= link_to pizza.name, pizza %> </li>
+
+<%end%>
+</ul>
