@@ -1,0 +1,13 @@
+
+<h3>Name: <%= @restaurant.name %></h3>
+<h3>Address: <%= @restaurant.address %></h3>
+
+<%= button_to "Create New Pizza", new_pizza_path, method: :get %>
+
+<h2> All Pizzas </h2>
+
+<% @restaurant.pizzas.each do |pizza| %>
+  <h3><%= link_to pizza.name, pizza %> </h3>
+<% end %>
+
+<%= button_to "Back to All Restaraunts", restaurants_path, method: :get %>
